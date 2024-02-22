@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Lection 2 homework</title>
+</head>
+<body>
+   <script>
+      document.write('задача 0: Обчислити значення виразів:<br>S1 = a+12+b<br>S2 = sqrt((a+b)/2a)<br>S3 = cbrt((a+b)*c)<br>S4 = sin(a/(-b))<br>')
+      btn_0 = document.createElement('button')
+      btn_0.textContent = 'Обчислити'
+      document.body.appendChild(btn_0)
+      btn_0.onclick = function () {
+         let a = parseInt(prompt('введіть a'))
+         let b = parseInt(prompt('введіть b'))
+         let c = parseInt(prompt('введіть c'))
+         let rezult_s1 = `результат виразу s1 = ${a+12+b}`;
+         let rezult_s2 = `результат виразу S2 = ${Math.sqrt(((a+b)/2*a))}`;
+         let rezult_s3 = `результат виразу S3: ${Math.cbrt((a+b)*c)}`
+         let rezult_s4 = `результат виразу S4: ${Math.sin(a/(-b))}`
+         alert(rezult_s1)
+         alert(rezult_s2)
+         alert(rezult_s3)
+         alert(rezult_s4)
+      }
+      document.write('<br><br>')
+
+      // ! доробити
+      document.write('задача 1: Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці<br>')
+      btn_1 = document.createElement('button')
+      btn_1.textContent = 'Обчислити'
+      document.body.appendChild(btn_1)
+      btn_1.onclick = function () { 
+         let a = parseInt(prompt('введіть a'))
+         let b = parseInt(prompt('введіть b'))
+         let sum = a + b
+         let mult = a * b
+         let divide = a / b
+         document.write(`<div>Результат у таблиці</div>
+         <table style="border: 1px solid black;">
+         <tr style="border: 1px solid black;">
+         <td style="border: 1px solid black;">Операція</td>
+         <td style="border: 1px solid black;">Результат</td>
+         </tr>
+         <tr style="border: 1px solid black;">
+         <td style="border: 1px solid black;">сумма</td>
+         <td style="border: 1px solid black;">${sum}</td>
+         </tr>
+         <tr style="border: 1px solid black;">
+         <td style="border: 1px solid black;">добуток</td>
+         <td style="border: 1px solid black;">${mult}</td>
+         </tr>
+         <tr style="border: 1px solid black;">
+         <td style="border: 1px solid black;">частка</td>
+         <td style="border: 1px solid black;">${divide}</td>
+         </tr>
+         </table>`)
+      }
+      document.write('<br><br>')
+
+      document.write('задача 2: Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років<br>')
+      btn_2 = document.createElement('button')
+      btn_2.textContent = 'Обчислити'
+      document.body.appendChild(btn_2)
+      btn_2.onclick = function () { 
+         let currentYear = new Date().getFullYear()
+         let a = parseInt(prompt('введіть ваш рік народження'))
+         alert(`Вам ${currentYear-a} років`)
+      }
+      document.write('<br><br>')
+
+      document.write('задача 3: Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості)<br>')
+      btn_3 = document.createElement('button')
+      btn_3.textContent = 'Обчислити'
+      document.body.appendChild(btn_3)
+      btn_3.onclick = function () {
+         let a = parseInt(prompt('введіть варітсть одиниці товару'))
+         let b = parseInt(prompt('введіть кількість товару'))
+         alert(`Вартість товару з ПДВ становить: ${a*b*1.05}`)
+      }
+      document.write('<br><br>')
+
+      document.write('задача 4: Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів<br>')
+      btn_4 = document.createElement('button')
+      btn_4.textContent = 'Обчислити'
+      document.body.appendChild(btn_4)
+      btn_4.onclick = function () {
+         let a = parseInt(prompt('введіть довжину (у см)'))
+         alert(`це: ${a/100} метр`)
+         alert(`це: ${a/100000} кілометр`)
+      }
+      document.write('<br><br>')
+
+      document.write('задача 5: Дано кількість секунд, що пройшла від початку доби. Визначити скільки це годин і хвилин<br>')
+      btn_5 = document.createElement('button')
+      btn_5.textContent = 'Обчислити'
+      document.body.appendChild(btn_5)
+      btn_5.onclick = function () {
+         let a = parseInt(prompt('введіть кількість секунд від початку дня'))
+         let qHour = Math.floor(a / 3600)
+         let qMin = Math.floor((a % 3600) / 60)
+         alert(`Від початку дня пройшло ${qHour} годин та ${qMin} хвилин`)
+      }
+      document.write('<br><br>')
+
+      document.write('задача 6: З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки<br>')
+      btn_6 = document.createElement('button')
+      btn_6.textContent = 'Обчислити'
+      document.body.appendChild(btn_6)
+      btn_6.onclick = function () {
+         let firstItemCost = (parseInt(prompt('введіть ціну першого товара'))) 
+         let firstItemQ = (parseInt(prompt('введіть кількість товару')))  
+         let secondItemCost = (parseInt(prompt('введіть ціну першого товара'))) 
+         let secondItemQ = (parseInt(prompt('введіть кількість товару')))  
+         let thirdItemCost = (parseInt(prompt('введіть ціну першого товара'))) 
+         let thirdItemQ = (parseInt(prompt('введіть кількість товару')))  
+         let firstItemFullCost = firstItemCost * firstItemQ
+         let secondItemFullCost = secondItemCost * secondItemQ
+         let thirdItemFullCost = thirdItemCost * thirdItemQ 
+         document.write(`<p>Кінцева вартість</p>
+         <div>Перший товар коштує ${firstItemCost} грн</div><br>
+         <div>Кількість х${firstItemQ} Загальна вартість ${firstItemFullCost} грн</div><br><br>
+         <div>Другий товар коштує ${secondItemCost} грн</div><br>
+         <div>Кількість х${secondItemQ} Загальна вартість ${secondItemFullCost} грн</div><br><br>
+         <div>Третій товар коштує ${thirdItemCost} грн</div><br>
+         <div>Кількість х${thirdItemQ} Загальна вартість ${thirdItemFullCost} грн</div><br><br>
+         <div>Повна сумма = ${firstItemFullCost + secondItemFullCost + thirdItemFullCost} грн</div>
+         `)   
+      }
+      document.write('<br><br>')
+
+      document.write('задача 7: Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0 до 6)<br>')
+      btn_5 = document.createElement('button')
+      btn_5.textContent = 'Обчислити'
+      document.body.appendChild(btn_5)
+      btn_5.onclick = function () {
+         let a = Math.floor(Math.random() * (12 - 1)) + 1
+         let b = Math.floor(Math.random() * (6 - 0)) + 0
+         alert(`сумма рандомного числа ${a} та рандомного числа ${b} дорівнює ${a+b}`)
+      }
+      document.write('<br><br>')
+   </script>
+</body>
+</html>
