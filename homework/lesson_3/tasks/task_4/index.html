@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_4</title>
+</head>
+<body>
+   <script>
+      document.write('<h2>Задача 4</h2><div>З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом, працівником, пенсіонером).</div><p>Відповідь:</p>')
+      let age = parseInt(prompt('Введіть ваш вік'))
+      
+      if (age>0 && age<7) {
+         let kid = 'Ви дитина'
+         alert(kid)
+         document.write(`${kid}`)
+      } else if (age>=7 && age<18) {   
+         let school = 'Ви школяр'
+         alert(school)
+         document.write(`${school}`)
+      }  else if (age>=18 && age<23) {   
+         let student = 'Ви студент'
+         alert(student)
+         document.write(`${student}`)
+      }  else if (age>=23 && age<60) {   
+         let worker = 'Ви працівник'
+         alert(worker)
+         document.write(`${worker}`)
+      }  else {
+         let pens = 'Ви пенсіонер'
+         alert(pens)
+         document.write(`${pens}`)
+      }
+      
+      document.write('<p><a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_3/index.html"><button>Назад</button></a></p>')
+   </script>
+</body>
+</html>
