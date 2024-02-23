@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_5</title>
+</head>
+<body>
+   <script>
+      document.write('<h2>Задача 5</h2><div>З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль). Вивести на екран назву транспортного засобу, яким він може керувати.</div><p>Відповідь:</p>')
+      const age = prompt('Введіть вашу категорію')
+      
+      switch (age) {
+         case 'A':
+         case 'a':
+         alert('Ви можете водити мотоцикл')
+         document.write('Ви можете водити мотоцикл')
+         break
+         case 'B':
+         case 'b':
+         alert('Ви можете водити легковий автомобіль')
+         document.write('Ви можете водити легковий автомобіль')
+         break
+         case 'C':
+         case 'c':
+         alert('Ви можете водити вантажний автомобіль')
+         document.write('Ви можете водити вантажний автомобіль')
+         break
+         default: alert('Невідома категорія')
+         break
+      }
+      
+      document.write('<p><a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_3/index.html"><button>Назад</button></a></p>')
+   </script>
+</body>
+</html>
