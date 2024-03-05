@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_-2</title>
+</head>
+<body>
+   <h2>Задача -2</h2><div style="font-weight: 600;">Поступово генерувати 100 випадкових чисел від 1 до 1000. Підрахувати яких чисел більше: парних чи непарних.
+   </div><p>Рішення:</p>
+   
+
+   <script>
+      let randomHundred = []
+      for (i = 0; i < 100; i++) {
+         randomHundred.push(Math.floor(Math.random() * (1000 - 1 + 1)) + 1)        
+      }
+      let evenNum = 0
+      let unevenNum = 0
+      for (i = 0; i < randomHundred.length; i++) {
+         if (randomHundred[i] % 2 == 0) {
+            evenNum++
+         } else {
+            unevenNum++ 
+         }
+      }
+
+      if (evenNum > unevenNum) {
+         document.write(`Парних чисел (${evenNum}) більше чим непарних (${unevenNum})<br><br>`)
+      } else if (evenNum < unevenNum) {
+         document.write(`Непарних чисел (${unevenNum}) більше чим парних (${evenNum})<br><br>`)
+      } else {
+         document.write(`Парних чисел (${evenNum}) однаково з непарними (${unevenNum})<br><br>`)
+      }
+      document.write(`Масив:<br> ${randomHundred}`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_5/index.html"><button>Назад</button></a>
+</body>
+</html>

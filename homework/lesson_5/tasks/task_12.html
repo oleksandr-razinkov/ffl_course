@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task_12</title>
+</head>
+<body>
+    <h2>Задача 12</h2><div style="font-weight: 600;">Ігровий автомат. Випадково вибираємо зображення у 3 позиціях.<br> Вибір у кожній позиції вибирається як одне з чотирьох зображень.<br> Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн).<br> Використати цикли і switch (для вибору зображення за номером).
+    </div><p>Рішення:</p>   
+    <button type="submit" class="btn" onclick="makeTry()">Make roll</button><br><br>
+    <div class="elements"></div>
+    <div class="winText"></div>
+
+    <script>
+        function makeTry() {
+            let itemOne ='<font style="font-size: 90px;">&#127819;</font>'
+            let itemTwo = '<font style="font-size: 90px;">&#127814;</font>'
+            let itemThree = '<font style="font-size: 90px;">&#127817;</font>'
+            let itemFour = '<font style="font-size: 90px;">&#127820;</font>'
+            let allItems = [itemOne,itemTwo,itemThree,itemFour]
+            let onlyThreeItems = []
+            for (let i = 1; i < 4; i++) {
+                let randomItem = allItems[Math.floor(Math.random() * allItems.length)];
+                onlyThreeItems.push(randomItem)
+            }
+
+            let winComb = 0
+            if (onlyThreeItems[0] == '<font style="font-size: 90px;">&#127819;</font>' && onlyThreeItems[1] == '<font style="font-size: 90px;">&#127819;</font>' && onlyThreeItems[2] == '<font style="font-size: 90px;">&#127819;</font>') {
+                winComb = 1
+            } else if (onlyThreeItems[0] == '<font style="font-size: 90px;">&#127814;</font>' && onlyThreeItems[1] == '<font style="font-size: 90px;">&#127814;</font>' && onlyThreeItems[2] == '<font style="font-size: 90px;">&#127814;</font>') {
+                winComb = 2
+            } else if (onlyThreeItems[0] == '<font style="font-size: 90px;">&#127817;</font>' && onlyThreeItems[1] == '<font style="font-size: 90px;">&#127817;</font>' && onlyThreeItems[2] == '<font style="font-size: 90px;">&#127817;</font>') {
+                winComb = 3
+            } else if (onlyThreeItems[0] == '<font style="font-size: 90px;">&#127820;</font>' && onlyThreeItems[1] == '<font style="font-size: 90px;">&#127820;</font>' && onlyThreeItems[2] == '<font style="font-size: 90px;">&#127820;</font>') {
+                winComb = 4
+            }
+            document.querySelector('.elements').innerHTML = `${onlyThreeItems[0]}${onlyThreeItems[1]}${onlyThreeItems[2]}`  
+            
+            let congratText = ''
+            switch (winComb) {
+                case 1: congratText = '<h1>Congratulations! You win 100 hrivnyas!</h1>'
+                break;
+                case 2: congratText = '<h1>Congratulations! You win 200 hrivnyas!</h1>'
+                break;
+                case 3: congratText = '<h1>Congratulations! You win 500 hrivnyas!</h1>'
+                break;
+                case 4: congratText = '<h1>Congratulations! You win 1000 hrivnyas!</h1>'
+                break;
+                default: congratText = '<h1>Unlucky, try again</h1>'
+            }
+
+            document.querySelector('.winText').innerHTML = `${congratText}`
+        }
+        
+    </script>
+ <br><br>
+ <a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_5/index.html"><button>Назад</button></a>
+</body>
+</html>

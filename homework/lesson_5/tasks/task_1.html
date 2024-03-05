@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_1</title>
+</head>
+<body>
+   <h2>Задача 1</h2><div style="font-weight: 600;">Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість випадкових чисел вводиться користувачем. 
+   </div><p>Рішення:</p>
+   
+   <script>
+      let numQ = parseInt(prompt('Введіть кількість випадкових чисел: '))
+      for (let index = 0; index < numQ; index++) {
+         let rundomNum = Math.floor(Math.random() * (100 - 1 + 1)) + 1
+         document.write(`<li>${rundomNum}</li>`)
+      }
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_5/index.html"><button>Назад</button></a>
+</body>
+</html>

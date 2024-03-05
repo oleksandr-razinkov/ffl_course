@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task_10</title>
+</head>
+<body>
+    <h2>Задача 10</h2><div style="font-weight: 600;">Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами.
+    </div><p>Рішення:</p>   
+    
+    <script>
+        let fromNum = parseInt(prompt("type number from", "0"));
+        let untilNum = parseInt(prompt("type number until", "100"));
+        if (fromNum > untilNum || fromNum === untilNum) {
+            document.write('Incorrect value. Type correct please')
+        } else {
+            let unevenNum = []
+            let sumUnevenNum = 0 
+            for (let i = fromNum; i <= untilNum; i++) {
+                if (i % 2 !== 0) {
+                    unevenNum.push(i)
+                    sumUnevenNum += i
+                }
+            }
+            document.write(`Sum of all nums of array (${unevenNum}) will be ${sumUnevenNum}`)
+        }
+        
+        
+    </script>
+ <br><br>
+ <a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_5/index.html"><button>Назад</button></a>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task_9</title>
+</head>
+<body>
+    <h2>Задача 9</h2><div style="font-weight: 600;">Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm)
+    </div><p>Рішення:</p>   
+    
+    <script>
+        let userNum = parseFloat(prompt("type the number from 1 to 10", "0"));
+        let rezult = false
+        let isLie = false
+        for (let i = 1; ; i++) {
+            let pcNum = Math.floor(Math.random() * (10 - 1 + 1)) + 1
+            let isSucc = confirm(`Ви загадали число ${pcNum}?`)
+            if (isSucc == true && pcNum == userNum) {
+                document.write(`Success! PC guess your number ${userNum} from ${i} try`)        
+                rezult = true
+                break
+            } else if (isSucc == true && pcNum != userNum) {
+                document.write(`Don't true! Your guess number ${userNum}`)
+                isLie = true
+                break
+            } else if (isSucc == false && pcNum == userNum) {
+                document.write(`Don't true! Your guess number ${userNum}`)
+                isLie = true
+                break
+            }
+        }
+    </script>
+ <br><br>
+ <a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_5/index.html"><button>Назад</button></a>
+</body>
+</html>

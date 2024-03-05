@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_3</title>
+</head>
+<body>
+   <h2>Задача 3</h2><div style="font-weight: 600;">Вивести таблицю з одним рядком і  7 стовпцями.
+   </div><p>Рішення:</p>   
+   
+   <script>
+      document.write('<table style="border: 1px solid black;">')
+      for (let index = 1; index < 2; index++) {
+         document.write('<tr style="border: 1px solid black;">')
+            for (let tdNum = 1; tdNum < 8; tdNum++) {
+               document.write(`<td style="border: 1px solid black;">${tdNum}</td>`)
+            }
+         document.write('</tr>')        
+      }
+      document.write('</table>')   
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_5/index.html"><button>Назад</button></a>
+</body>
+</html>
