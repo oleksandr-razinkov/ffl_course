@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_3</title>
+</head>
+<body>
+   <h2>Задача 3</h2><div style="font-weight: 600;">З клавіатури вводяться поступово числа. Знайти два найбільші числа.<br> Ввід здійснюється до тих пір, поки різниця між такими числами є більшою за 5.</div>
+   <p>Рішення:</p>
+
+   <script>
+      let allNum = []
+      let firstNum
+      let secondNum
+      do {
+         firstNum = parseInt(prompt('type number'))
+         allNum.push(firstNum) 
+         secondNum = parseInt(prompt('type one more number'))
+         allNum.push(secondNum) 
+      } while ((secondNum - firstNum)>5 || (firstNum - secondNum)>5);
+      allNum = allNum.reverse(allNum.sort((a, b) => a - b ));
+      document.write(`full array ${allNum}<br>`)
+      document.write(`the biggest num ${allNum[0]}<br>`)
+      document.write(`the second biggest num ${allNum[1]}<br>`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_6/index.html"><button>Назад</button></a>
+</body>
+</html>

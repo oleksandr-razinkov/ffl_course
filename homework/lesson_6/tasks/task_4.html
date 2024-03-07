@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_4</title>
+</head>
+<body>
+   <h2>Задача 4</h2><div style="font-weight: 600;">Інвестор вклав  тис. грн на 20 років під 20% річних, а потім на 17 років під 27% річних.<br> Визначити за допомогою циклів суму, яку він одержить.</div>
+   <p>Рішення:</p>
+
+   <script>
+    let depNum = parseInt(prompt('type amoumt of your deposite $'))
+    let basicDep = depNum
+    for (let i = 1; i < 21; i++) {
+        if (i < 4) depNum += basicDep*0.2
+        else depNum += basicDep*0.27.toFixed(2)
+    }
+    document.write(`Your deposite after 20 years will be ${depNum.toFixed(2)}$<br>
+    Clear profit is ${depNum.toFixed(2) - basicDep}$`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_6/index.html"><button>Назад</button></a>
+</body>
+</html>
