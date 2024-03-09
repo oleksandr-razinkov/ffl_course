@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_0</title>
+   <style>
+      body {
+            font-family: 'Roboto';
+      }
+   </style>
+</head>
+<body>
+   <h2>Задача 0</h2><div style="font-weight: 600;">Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.
+</div>
+   <p>Рішення:</p>
+
+   <script>
+      function getMonth() {
+         let monthNum = parseInt(prompt('type number of month'))
+         let seasonOfYear = ''
+         switch (monthNum) {
+            case 12: 
+            case 1: 
+            case 2: seasonOfYear = 'Winter'
+            break;
+            case 3: 
+            case 4: 
+            case 5: seasonOfYear = 'Spring'
+            break;
+            case 6: 
+            case 7: 
+            case 8: seasonOfYear = 'Summer'
+            break;
+            case 9: 
+            case 10: 
+            case 11: seasonOfYear = 'Fall'
+            break;
+            default: seasonOfYear = 'incorrect number of month (can be from 1 to 12)'
+            break;
+         }
+         return seasonOfYear  
+      }
+      document.write(`It is ${getMonth()}`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_7/index.html"><button>Назад</button></a>
+</body>
+</html>

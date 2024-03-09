@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_5</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 5</h2><div style="font-weight: 600;">Створити окремі функції, які переводять: Сантиметри у дюйми; Кілограми у фунти; Кілометри у милі.</div>
+   <p>Рішення:</p>
+
+   <script>
+        function cmToInch() {
+            let cmValue = parseFloat(prompt('type value in cm'))
+            let inchValue = (cmValue/2.54).toFixed(2)
+            alert(`${cmValue} cm = ${inchValue} inchs`)
+            return inchValue
+        }
+        function kgToPound() {
+            let kgValue = parseFloat(prompt('type value in kg'))
+            let poundValue = (kgValue*2.20462).toFixed(2)
+            alert(`${kgValue} kg = ${poundValue} pounds`)
+            return poundValue
+        }
+        function kmToMile() {
+            let kmValue = parseFloat(prompt('type value in km'))
+            let mileValue = (kmValue*0.62137).toFixed(2)
+            alert(`${kmValue} km = ${mileValue} miles`)
+            return mileValue
+        }
+        cmToInch()
+        kgToPound()
+        kmToMile()
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_7/index.html"><button>Назад</button></a>
+</body>
+</html>

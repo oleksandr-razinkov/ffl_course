@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_10</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 10</h2><div style="font-weight: 600;">Дано покази температур (довільна кількість). <br>Розробити функцію, яка дозволить знайти середнє значення для додатних показів температури.</div>
+   <p>Рішення:</p>
+    
+   <script>
+    function getAvgPositiveTemp() {
+        let avgPositiveTemp
+        let allUserPositiveTemps = 0
+        let allUserPositiveTempsQ = 0
+        for (let i = 0; i < 5; i++) {
+            let userTemp = parseInt(prompt('type the temp:'))
+            if (userTemp >= 0) {
+                allUserPositiveTemps += userTemp
+                allUserPositiveTempsQ ++
+            }
+        }
+        avgPositiveTemp = allUserPositiveTemps / allUserPositiveTempsQ
+        return document.write(`Середня тепература серед плюсових була = ${avgPositiveTemp.toFixed(2)} С`)
+    }
+    getAvgPositiveTemp()
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_7/index.html"><button>Назад</button></a>
+</body>
+</html>

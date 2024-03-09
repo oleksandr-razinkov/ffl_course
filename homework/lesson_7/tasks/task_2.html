@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_2</title>
+   <style>
+      body {
+          font-family: 'Roboto';
+      }
+   </style>
+</head>
+<body>
+   <h2>Задача 2</h2><div style="font-weight: 600;">Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.</div>
+   <p>Рішення:</p>
+
+   <script>
+      function getDayInfo() {
+         let dayNum = parseInt(prompt('type number of day'))
+         let dayStatus = ''
+         if (dayNum>=1 && dayNum<=5) dayStatus = 'work day'
+         else if (dayNum==6 || dayNum==7) dayStatus = 'off day'
+         else dayStatus = 'incorrect number of day (can be from 1 to 7)'
+         return dayStatus  
+      }
+      document.write(`It is ${getDayInfo()}`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_7/index.html"><button>Назад</button></a>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_4</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 4</h2><div style="font-weight: 600;">Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.</div>
+   <p>Рішення:</p>
+
+   <script>
+      let a = parseInt(prompt('type num #1'))
+      let b = parseInt(prompt('type num #2'))
+      let c = parseInt(prompt('type num #3'))
+      let abc = [a,b,c]
+      let evenNums = 0
+      let positiveNums = 0
+      let aboveHundred = 0
+      function numCheck(abc) {
+         for (let i = 0; i < abc.length; i++) {
+            if (abc[i] % 2 == 0) evenNums++
+            if (abc[i] >= 0) positiveNums++
+            if (abc[i] > 100) aboveHundred++
+         }
+         return evenNums, positiveNums, aboveHundred
+      }
+      numCheck(abc)
+      document.write(`your nums = ${abc}<br>`)
+      document.write(`quantity of even nums = ${evenNums}<br>`)
+      document.write(`quantity of positive nums = ${positiveNums}<br>`)
+      document.write(`quantity of bigger 100 nums = ${aboveHundred}<br>`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_7/index.html"><button>Назад</button></a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_7</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 7</h2><div style="font-weight: 600;">Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень</div>
+   <p>Рішення:</p>
+
+   <script>
+    function rundomImg() {
+        let imgUrl = ''
+        let rundomNum
+        rundomNum = 1 + Math.floor(Math.random() * 4)
+        switch (rundomNum) {
+            case 1: imgUrl = './img/pic_1.jpg'
+                break;
+            case 2: imgUrl = './img/pic_2.jpg'
+                break;
+            case 3: imgUrl = './img/pic_3.jpg'
+                break;
+            case 4: imgUrl = './img/pic_4.jpg'
+                break;
+        }
+        return imgUrl
+    }   
+    document.write(`<img src="${rundomImg()}">`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_7/index.html"><button>Назад</button></a>
+</body>
+</html>

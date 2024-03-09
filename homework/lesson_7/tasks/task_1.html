@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_1</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 1</h2><div style="font-weight: 600;">Створити функцію, яка за номером місяця повертає його назву.</div>
+   <p>Рішення:</p>
+
+   <script>
+      function getMonth() {
+         let monthNum = parseInt(prompt('type number of month'))
+         let nameOfMonth = ''
+         switch (monthNum) {
+            case 1: nameOfMonth = 'January'
+            break;
+            case 2: nameOfMonth = 'February'
+            break;
+            case 3: nameOfMonth = 'March'
+            break;
+            case 4: nameOfMonth = 'April'
+            break;
+            case 5: nameOfMonth = 'May'
+            break;
+            case 6: nameOfMonth = 'June'
+            break;
+            case 7: nameOfMonth = 'July'
+            break;
+            case 8: nameOfMonth = 'August'
+            break;
+            case 9: nameOfMonth = 'September'
+            break;
+            case 10: nameOfMonth = 'October'
+            break;
+            case 11: nameOfMonth = 'November'
+            break;
+            case 12: nameOfMonth = 'December'
+            break;
+            default: nameOfMonth = 'incorrect number of month (can be from 1 to 12)'
+            break;
+         }
+         return nameOfMonth  
+      }
+      document.write(`It is ${getMonth()}`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_7/index.html"><button>Назад</button></a>
+</body>
+</html>

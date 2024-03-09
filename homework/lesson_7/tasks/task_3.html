@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_3</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 3</h2><div style="font-weight: 600;">Створити окремі функції, які для 4 чисел знаходять: суму, добуток, середнє арифметичне, мінімальне значення</div>
+   <p>Рішення:</p>
+
+   <script>
+    let allNum = []
+      for (let i = 1; i < 5; i++) {
+        let x = parseInt(prompt(`type ${i}-th number`))  
+        allNum.push(x)
+      }
+      function getSum() {
+        let totalSum = 0
+        for (let i = 0; i < allNum.length; i++) {
+        totalSum += allNum[i]  
+        }
+        return totalSum
+      }
+      function getMultiply() {
+        let totalMul = 1
+        for (let i = 0; i < allNum.length; i++) {
+        totalMul *= allNum[i]  
+        }
+        return totalMul
+      }
+      function getAvg() {
+        let totalAvg = (getSum() / allNum.length).toFixed(1)
+        return totalAvg
+      }
+      function getMin() {
+        let totalMin = Math.min.apply(null, allNum)
+        return totalMin
+      }
+
+      document.write(`your numbers: (${allNum})<br>`)
+      document.write(`sum of all your numbers will be = ${getSum()}<br>`)
+      document.write(`multiply of all your numbers will be = ${getMultiply()}<br>`)
+      document.write(`average of all your numbers will be = ${getAvg()}<br>`)
+      document.write(`min of all your numbers will be = ${getMin()}<br>`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_7/index.html"><button>Назад</button></a>
+</body>
+</html>

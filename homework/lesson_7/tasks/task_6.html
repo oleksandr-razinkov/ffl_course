@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_6</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+        table, tr, td {
+            border: 1px solid black; 
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 6</h2><div style="font-weight: 600;"> Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців</div>
+   <p>Рішення:</p>
+
+   <script>
+      let columnQ = parseInt(prompt('type num of columns'))
+      let rowQ = parseInt(prompt('type num of rows'))
+      let celText = prompt('type text for every cel')
+      function getTable() {
+        document.write('<table>')
+            for (let i = 0; i < rowQ; i++) {
+                document.write('<tr>')
+                    for (let j = 0; j < columnQ; j++) {
+                    document.write(`<td>${celText}</td>`)
+                    }
+                document.write('</tr>')        
+            }
+        document.write('</table>')
+      }
+      getTable() 
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_7/index.html"><button>Назад</button></a>
+</body>
+</html>
