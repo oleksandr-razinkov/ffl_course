@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_2</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 2</h2><div style="font-weight: 600;">Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :<br> починаються на букву «А»;<br> перша і остання літери співпадають;<br> складаються з більше ніш 5 символів;
+
+</div>
+   <p>Рішення:</p>
+
+   <script>
+     let carNumbers = ['X67H','A2713','BR8976','A78Y1A','IO9878I']
+     document.write(`Послідовність номерів: ${carNumbers}<br><br>`)
+     
+     function getFirstA(...carNumbers) {
+        let firstA = 0
+        for (let i = 0; i < carNumbers.length; i++) {
+            if (carNumbers[i].toLowerCase().startsWith('a')) firstA++ 
+        }
+        return firstA  
+     }
+     document.write(`Номера починаються з 'A' = ${getFirstA(...carNumbers)}<br>`)
+
+     function getSameFirstLastLetter(...carNumbers) {
+        let sameFirstLastLetter = 0
+        for (let j = 0; j < carNumbers.length; j++) {
+            let firstEl = carNumbers[j][0].toLowerCase()
+            let lastEl = carNumbers[j][carNumbers[j].length-1].toLowerCase()
+            if (firstEl === lastEl) sameFirstLastLetter++
+        }
+        return sameFirstLastLetter  
+     }
+     document.write(`Однаковий перший та останній символ мають = ${getSameFirstLastLetter(...carNumbers)}<br>`)
+
+     function getMoreThenFiveLetter(...carNumbers) {
+        let moreThenFiveLetter = 0
+        for (let y = 0; y < carNumbers.length; y++) {
+            if (carNumbers[y].length > 5) moreThenFiveLetter++
+        }
+        return moreThenFiveLetter  
+     }
+     document.write(`Номера складаються з більш наж 5 символів = ${getMoreThenFiveLetter(...carNumbers)}<br>`)
+
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_8/index.html"><button>Назад</button></a>
+</body>
+</html>

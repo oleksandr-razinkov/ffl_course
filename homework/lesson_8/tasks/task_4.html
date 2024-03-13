@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_4</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 4</h2><div style="font-weight: 600;">Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+    <br>за весь рік;
+    <br>у першій половині року;
+    <br>у другій половині року;
+    <br>за літо;
+    <br>за ІІ квартал;
+    <br>за парні місяці (з парними номерами);
+    <br>за місяці, які є початковими у сезоні (весна, літо, осінь, зима).</div>
+   <p>Рішення:</p>
+
+   <script>
+     let paymentsPerYear = [45,67,76,33,36,87,54,91,64,52,78,39]
+     document.write(`Всі платіжки = ${paymentsPerYear}<br><br>`)
+
+    function getPaymentsInfo(...paymentsPerYear) {     
+        let totalSum = 0
+        let TotalSumFirstSixMonth = 0 
+        let TotalSumSecondSixMonth = 0
+        let totalSumPerSummer = 0 
+        let totalSumSecondQuarter = 0
+        let totalSumEvenMonth = 0
+        let totalSumFirstMonthOfSeason = 0
+        for (let i = 0; i < paymentsPerYear.length; i++) {
+            totalSum += paymentsPerYear[i]
+            if (i < 6) TotalSumFirstSixMonth += paymentsPerYear[i]
+            if (i >= 6) TotalSumSecondSixMonth += paymentsPerYear[i]
+            if (i > 4 && i < 8) totalSumPerSummer += paymentsPerYear[i]
+            if (i > 2 && i < 6) totalSumSecondQuarter += paymentsPerYear[i]
+            if ((i+1) % 2 == 0) totalSumEvenMonth += paymentsPerYear[i]
+            if ((i==2) || (i==5) || (i==8) || (i==11)) totalSumFirstMonthOfSeason += paymentsPerYear[i]
+        }
+        let allArrayInfo = [
+        totalSum,
+        TotalSumFirstSixMonth,
+        TotalSumSecondSixMonth,
+        totalSumPerSummer,
+        totalSumSecondQuarter,
+        totalSumEvenMonth,
+        totalSumFirstMonthOfSeason
+        ]
+        return allArrayInfo     
+    }
+    document.write(`Сума за весь рік = ${getPaymentsInfo(...paymentsPerYear)[0]}<br>`)
+    document.write(`Сума за перші шість місяців = ${getPaymentsInfo(...paymentsPerYear)[1]}<br>`)
+    document.write(`Сума за за другі шість місяців = ${getPaymentsInfo(...paymentsPerYear)[2]}<br>`)
+    document.write(`Сума за літо = ${getPaymentsInfo(...paymentsPerYear)[3]}<br>`)
+    document.write(`Сума за другий квартал = ${getPaymentsInfo(...paymentsPerYear)[4]}<br>`)
+    document.write(`Сума за парні місяці = ${getPaymentsInfo(...paymentsPerYear)[5]}<br>`)
+    document.write(`Сума за перші місяці сезонів = ${getPaymentsInfo(...paymentsPerYear)[6]}<br>`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_8/index.html"><button>Назад</button></a>
+</body>
+</html>

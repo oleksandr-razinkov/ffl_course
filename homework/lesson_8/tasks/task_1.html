@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_1</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 1</h2><div style="font-weight: 600;">Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:<br>номери днів, протягом яких кількість відвідувачів була меншою за 20;<br>номери днів, коли кількість відвідувачів була мінімальною;<br>загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.</div>
+   <p>Рішення:</p>
+
+   <script>
+     let customersPerWeekQ = [15,22,34,20,13,28,13]
+     document.write(`Кількість відвідувачів за тиждень (по днях) = ${customersPerWeekQ}<br><br>`)
+
+     function getLessThenTwentyCustomersDays(...customersPerWeekQ) {
+        let lessThenTwentyDays = []
+        for (let i = 0; i < customersPerWeekQ.length; i++) {
+            if (customersPerWeekQ[i] < 20) lessThenTwentyDays.push(i+1)
+        }
+        return lessThenTwentyDays
+     }
+     document.write(`Номера днів коли відвідувачів було меньше ніж двадцять = ${getLessThenTwentyCustomersDays(...customersPerWeekQ)}<br>`)
+     
+     function getMinCustomersQuantityDay(...customersPerWeekQ) {
+        let minCustomersQuantityDay = []
+        let minValueOfArray = Infinity
+        for (let b = 0; b < customersPerWeekQ.length; b++) {
+            if (customersPerWeekQ[b] < minValueOfArray) minValueOfArray = customersPerWeekQ[b]         
+        }
+        for (let x = 0; x < customersPerWeekQ.length; x++) {
+            if (customersPerWeekQ[x] === minValueOfArray) minCustomersQuantityDay.push(x+1)
+        }
+        return minCustomersQuantityDay
+     }
+     document.write(`Дні з наіменьшою кількістю відвідувачів = ${getMinCustomersQuantityDay(...customersPerWeekQ)}<br>`)
+
+     function getCustomersQuantityWorkDay(...customersPerWeekQ) {
+        let customersQuantityWorkDay = 0
+        for (let c = 0; c < customersPerWeekQ.length; c++) {
+            if (5 > c > 0) customersQuantityWorkDay += customersPerWeekQ[c]
+        }
+        return customersQuantityWorkDay
+     }
+     document.write(`Кількість відвідувачів у робочі дні = ${getCustomersQuantityWorkDay(...customersPerWeekQ)}<br>`)
+     
+     function getCustomersQuantityOffDay(...customersPerWeekQ) {
+        let customersQuantityOffDay = 0
+        for (let k = 0; k < customersPerWeekQ.length; k++) {
+            if (k >= 5) customersQuantityOffDay += customersPerWeekQ[k]
+        }
+        return customersQuantityOffDay
+     }
+     document.write(`Кількість відвідувачів у вихідні дні = ${getCustomersQuantityOffDay(...customersPerWeekQ)}<br>`)
+     
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_8/index.html"><button>Назад</button></a>
+</body>
+</html>

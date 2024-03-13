@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_3</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 3</h2><div style="font-weight: 600;">Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі дозволити користувач (кількість грошей задається).</div>
+   <p>Рішення:</p>
+
+   <script>
+     let productPrices = [1000, 20, 31, 99, 567]
+     let productTitles = ['cheese', 'juice', 'bread', 'banana', 'milk']
+     let cashQ = parseInt(prompt('Кількість ваших грошей ='))
+     document.write(`Товари = ${productTitles}, ціни на них ${productPrices}<br><br>`)
+     
+     function getAforableProducts(cashQ,...productPrices) {
+        let aforableProducts = []
+        for (let i = 0; i < productPrices.length; i++) {
+            if (cashQ >= productPrices[i]) aforableProducts.push(productTitles[i])           
+        }
+        if (aforableProducts.length == 0) aforableProducts.push('Нажаль ваших грошей недостатньо для купівлі товарів') 
+        return aforableProducts
+     }
+
+     document.write(`З вашими грошима ${cashQ} грн, ви можете дозволити купити собі наступні товари:<br> ${getAforableProducts(cashQ,...productPrices)}<br>`)
+
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_8/index.html"><button>Назад</button></a>
+</body>
+</html>

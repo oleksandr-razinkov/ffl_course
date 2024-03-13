@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_5</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 5</h2><div style="font-weight: 600;">Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим чином значеннями від -500 до 500).<br> Надаючи користувачу можливість вибирати номери елементів  (поки він не відмовиться). Знаходити сумарний виграш.</div>
+   <p>Рішення:</p>
+
+   <script>
+    let rundomArray = []
+    for (let i = 0; i < 20; i++) {
+        let rundomNum = Math.floor(Math.random() * (500 - -500 + 1)) + -500
+        rundomArray.push(rundomNum)
+    }
+    document.write(`Рандомно згенеровані суми для комірок = ${rundomArray}<br><br>`)
+
+    function tryToWin(...rundomArray) {
+        let totalWin = 0
+        let isProceed
+        mark: do {
+            let userNum = parseInt(prompt(`Оберіть комірку від 1 до ${rundomArray.length}:`))
+            if (userNum < 0 || userNum > rundomArray.length || isNaN(userNum)) {
+                alert('Комірка поза корректним діапазоном')
+                continue mark
+            }
+            totalWin += rundomArray[userNum-1]
+            rundomArray.splice(userNum-1,1)
+            isProceed = confirm(`Поточний виграш становить ${totalWin}, продовжуємо?`)
+        } while (isProceed == true && rundomArray.length > 0);
+        return totalWin
+    }
+    document.write(`Підсумковий виграш = ${tryToWin(...rundomArray)}<br>`)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_8/index.html"><button>Назад</button></a>
+</body>
+</html>
