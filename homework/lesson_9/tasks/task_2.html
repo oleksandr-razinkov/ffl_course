@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_2</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 2</h2><div style="font-weight: 600;">Користувач вводить кількість елементів. Створити масив, у якому перша половина заповнена 1-цями, а друга заповнена 7-ками.</div>
+   <p>Рішення:</p>
+
+   <script>
+    let elNum = parseInt(prompt('type quantity of elements:'))
+    let arrHalf = Math.round(elNum/2) 
+    let myArr = new Array(elNum).fill(1,0,arrHalf).fill(7,arrHalf)
+    document.write(myArr)
+   </script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_8/index.html"><button>Назад</button></a>
+</body>
+</html>
