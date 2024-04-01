@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task_4</title>
+    <style>
+      body {
+        font-family: "Roboto";
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Задача 4</h2>
+    <div style="font-weight: 600">
+      Для розглянутих методів сортування спробувати вивести етапи сортування
+      шляхом виведення відповідних таблиць за зразком.
+    </div>
+    <p>Рішення:</p>
+
+    <script>
+      let arr = []
+      for (let i = 0; i < 5; i++) {
+        arr.push(Math.floor(Math.random() * 100))
+      }
+      document.write(`start array = ${arr}<br><br>`)
+
+      let countOfChanges = 0
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - 1; j++) {
+          if (arr[j] > arr[j + 1]) {
+            const tmp = arr[j]
+            arr[j] = arr[j + 1]
+            arr[j + 1] = tmp
+            countOfChanges++
+            document.write(`${arr}<br>`)
+          }  
+        }
+      }
+      document.write(`bubble sort array = ${arr}<br>`)
+      document.write(`count of changes = ${countOfChanges}<br><br>`)
+    </script>
+    <br /><br />
+    <a
+      href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_12/index.html"
+      ><button>Назад</button></a
+    >
+  </body>
+</html>
