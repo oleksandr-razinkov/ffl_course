@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_2</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 2</h2><div style="font-weight: 600;">Дано інформацію про прибуток К магазинів протягом тижня. Знайти:</div>
+   <p>Рішення:</p>
+    
+<script>
+    document.write('week profit of stores:<br>')
+    const weekStoresProfit = [
+        [],
+        [],
+        [],
+        [],
+    ]
+    for (let i = 0; i < weekStoresProfit.length; i++) {
+        for (let j = 0; j < 7; j++) {
+            let rundomProfit =  1 + Math.floor(Math.random() * 1000)
+            weekStoresProfit[i].push(rundomProfit)
+        }
+    }
+    document.write(`${weekStoresProfit[0]}<br>`)
+    document.write(`${weekStoresProfit[1]}<br>`)
+    document.write(`${weekStoresProfit[2]}<br>`)
+    document.write(`${weekStoresProfit[3]}<br><br>`)
+
+    // point 1
+    document.write('<div style="font-weight: 600;">1) загальний прибуток кожного масиву за тиждень;</div>')
+    for (let q = 0; q < weekStoresProfit.length; q++) {
+        let storeProfit = 0
+        for (let w = 0; w < weekStoresProfit[q].length; w++) {
+            storeProfit += weekStoresProfit[q][w]
+        }
+        document.write(`Profit of store #${q+1} for whole week is = ${storeProfit}<br>`)
+    }
+    document.write('<br>')
+
+    // point 2
+    document.write('<div style="font-weight: 600;">2) загальний прибуток усіх магазинів по дням</div>')
+    for (let e = 0; e < weekStoresProfit.length; e++) {
+        document.write(`profit of store #${e+1} for`)
+        for (let r = 0; r < weekStoresProfit[e].length; r++) {
+            document.write(` ${r+1}th day = ${weekStoresProfit[e][r]};`)
+        }
+        document.write('<br>')
+    }
+    document.write('<br>')
+
+    // point 3
+    document.write('<div style="font-weight: 600;">3) загальний прибуток за робочі дні</div>')
+    for (let t = 0; t < weekStoresProfit.length; t++) {
+        let storeProfitWorkDays = 0
+        for (let y = 0; y < 5; y++) {
+            storeProfitWorkDays += weekStoresProfit[t][y]
+        }
+        document.write(`profit of store #${t+1} for work days is = ${storeProfitWorkDays}<br>`)
+    }
+    document.write('<br>')
+
+    // point 4
+    document.write('<div style="font-weight: 600;">4) загальний прибуток за вихідні дні</div>')
+    for (let u = 0; u < weekStoresProfit.length; u++) {
+        let storeProfitWorkDays = 0
+        for (let o = 5; o < 7; o++) {
+            storeProfitWorkDays += weekStoresProfit[u][o]
+        }
+        document.write(`profit of store #${u+1} for off days is = ${storeProfitWorkDays}<br>`)
+    }
+    document.write('<br>')
+
+    // point 5
+    document.write('<div style="font-weight: 600;">5) максимальний прибуток за середу</div>')
+    let maxWednesdayProfit = 0
+    for (let p = 0; p < weekStoresProfit.length; p++) {
+        if(maxWednesdayProfit < weekStoresProfit[p][2]) maxWednesdayProfit = weekStoresProfit[p][2]
+    }
+    document.write(`max profit on wednesday was ${maxWednesdayProfit}<br><br>`)
+
+    // point 6
+    document.write('<div style="font-weight: 600;">6) сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200</div>')
+    let overTwoHundredList = []
+    for (let a = 0; a < weekStoresProfit.length; a++) {
+        for (let s = 0; s < weekStoresProfit[a].length; s++) {
+            if(weekStoresProfit[a][s] > 200) overTwoHundredList.push(weekStoresProfit[a][s])
+        }
+    }
+    document.write(`over 200 list = ${overTwoHundredList}<br><br>`)
+
+    // point 7
+    document.write('<div style="font-weight: 600;">7) відсортувати кожен тиждень за зростанням</div>')
+    for (let s = 0; s < weekStoresProfit.length; s++) {
+    let sortedRow = [...weekStoresProfit[s]].sort((a,b) => a - b)
+    document.write(`${sortedRow}<br>`)
+    }
+    document.write('<br>')
+
+    // point 8
+    document.write('<div style="font-weight: 600;">8) відсортувати тижні (рядки) за спаданням максимального елементи у цьому тижні (рядку)</div>')
+    let maxElSort = [...weekStoresProfit].sort((a,b) => Math.max(...b) - Math.max(...a))
+    document.write(`${maxElSort}<br><br>`)
+    
+    // point 9
+    document.write('<div style="font-weight: 600;">9) упорядкувати тижні (рядки) за спаданням суми елементів у рядку</div>')
+    let totalSumSort = [...weekStoresProfit].sort((a,b) => b.reduce((prevEl, value) => prevEl + value) - a.reduce((prevEl, value) => prevEl + value))  
+    document.write(`${totalSumSort}<br><br>`)
+</script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_11/index.html"><button>Назад</button></a>
+</body>
+</html>
+

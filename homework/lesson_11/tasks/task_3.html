@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task_3</title>
+    <style>
+      body {
+        font-family: "Roboto";
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Задача 3</h2>
+    <div style="font-weight: 600">Морський бій</div>
+    <div style="font-weight: 600">
+      Випадковим чином на двовимірному полі розміром 6*6 розташовується 5
+      кораблів.<br />
+      Користувач стріляє вказуючи координати.<br />
+      Гра продовжується поки не потоплено усі кораблі або у користувача не
+      закінчаться снаряди.
+    </div>
+    <p>Рішення:</p>
+
+    <script>
+      function getGameField(rowNum = 6, colNum = 6, shipNum = 5) {
+        let gameField = [];
+        for (let f = 0; f < rowNum; f++) {
+          let row = new Array(colNum).fill(0);
+          gameField.push(row);
+        }
+
+        for (let i = 0; i < shipNum; ) {
+          let r = Math.floor(Math.random() * rowNum);
+          let c = Math.floor(Math.random() * colNum);
+          if (gameField[r][c] !== 1) {
+            gameField[r][c] = 1;
+            i++;
+          }
+        }
+        return gameField;
+      }
+
+      function play(shipNum, missleNum, gameField) {
+        while (shipNum > 0 && missleNum > 0) {
+          let r = parseInt(prompt("type row")) - 1;
+          let c = parseInt(prompt("type col")) - 1;
+          if (gameField[r][c] === 1) {
+            alert("got it");
+            gameField[r][c] = 0;
+            shipNum--;
+          } else alert("you miss");
+          missleNum--;
+        }
+        if (shipNum === 0) return "you win";
+        else return "you lose";
+      }
+
+      function game(shipNum = 5, missleNum = 5, rowNum = 6, colNum = 6) {
+        let gameField = getGameField(rowNum, colNum, shipNum);
+        console.log(gameField);
+        let res = play(shipNum, missleNum, gameField);
+        alert(res);
+      }
+
+      game();
+    </script>
+    <br /><br />
+    <a
+      href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_11/index.html"
+      ><button>Назад</button></a
+    >
+  </body>
+</html>

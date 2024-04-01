@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>task_1</title>
+   <style>
+        body {
+            font-family: 'Roboto';
+        }
+   </style>
+</head>
+<body>
+   <h2>Задача 1</h2><div style="font-weight: 600;">Знайти суми елементів у вказаній області</div>
+
+   <p>Рішення:</p>
+
+<script>
+    document.write('example Arr<br>')
+    let exampleArr = [
+        [3,5,8,10],
+        [1,4,7,9],
+        [5,8,3,12],
+        [9,6,13,2]
+    ]
+    document.write(`${exampleArr[0]}<br>`)
+    document.write(`${exampleArr[1]}<br>`)
+    document.write(`${exampleArr[2]}<br>`)
+    document.write(`${exampleArr[3]}<br><br>`)
+
+    // point 1
+    document.write('<div style="font-weight: 600;">1) номери рядків від 0 до половини, стовпці від 0 до половини</div>')
+    let sumFirstSector = 0
+    for (let indexRow = 0; indexRow < (exampleArr.length / 2); indexRow++) {
+        for (let indexCol = 0; indexCol < (exampleArr[indexRow].length / 2); indexCol++) {
+            sumFirstSector += exampleArr[indexRow][indexCol]
+        }
+    }
+    document.write(`sum of first sector elements = ${sumFirstSector}<br><br>`)
+
+    // point 2
+    document.write('<div style="font-weight: 600;">2) номери рядків від 0 до половини, стовпці від половини до кінця</div>')
+    let sumSecondSector = 0
+    for (let indexRow = 0; indexRow < (exampleArr.length / 2); indexRow++) {
+        for (let indexCol = (exampleArr[indexRow].length / 2); indexCol < exampleArr[indexRow].length; indexCol++) {
+            sumSecondSector += exampleArr[indexRow][indexCol]
+        }
+    }
+    document.write(`sum of second sector elements = ${sumSecondSector}<br><br>`)
+
+    // point 3
+    document.write('<div style="font-weight: 600;">3) номери рядків (від половини до кінця, стовпці від 0 до половини)</div>')
+    let sumThirdSector = 0
+    for (let indexRow = (exampleArr.length / 2); indexRow < exampleArr.length; indexRow++) {
+        for (let indexCol = 0; indexCol < (exampleArr[indexRow].length / 2); indexCol++) {
+            sumThirdSector += exampleArr[indexRow][indexCol]
+        }
+    }
+    document.write(`sum of Third sector elements = ${sumThirdSector}<br><br>`)
+
+    // point 4
+    document.write('<div style="font-weight: 600;">4) номери рядків від половини до кінця , стовпці від половини до кінця</div>')
+    let sumFourthSector = 0
+    for (let indexRow = (exampleArr.length / 2); indexRow < exampleArr.length; indexRow++) {
+        for (let indexCol = (exampleArr[indexRow].length / 2); indexCol < exampleArr.length; indexCol++) {
+            sumFourthSector += exampleArr[indexRow][indexCol]
+        }
+    }
+    document.write(`sum of Fourth sector elements = ${sumFourthSector}<br><br>`)
+
+    // point 5
+    document.write('<div style="font-weight: 600;">5) Суму парних рядків</div>')
+    let sumEvenRow = exampleArr.reduce(
+        (prevTotalEvenRow, row, ind) => ind===0 || ind%2===0 ? 
+        prevTotalEvenRow + row.reduce((prevEl,el) => prevEl + el) : 
+        prevTotalEvenRow,
+        0
+    )  
+    document.write(`sum of even rows = ${sumEvenRow}<br><br>`)
+
+    // point 6
+    document.write('<div style="font-weight: 600;">6) Суму непарних стовпців</div>')
+    let sumOddCol = 0
+    for (let indexRow = 0; indexRow < exampleArr.length; indexRow++) {
+        for (let indexCol = 1; indexCol < exampleArr[indexRow].length; indexCol = indexCol + 2) {
+            sumOddCol += exampleArr[indexRow][indexCol]
+        }
+    }  
+    document.write(`sum of even rows = ${sumOddCol}<br><br>`)
+
+    // point 7
+    document.write('<div style="font-weight: 600;">7) У парних рядках – непарні стовпці, у непарних – парні.</div>')
+    let sumEvenRowOddColOddRowEvenCol = 0
+    for (let indexRow = 0; indexRow < exampleArr.length; indexRow++) {
+        for (let indexCol = 0; indexCol < exampleArr[indexRow].length; indexCol++) {
+            if(indexRow %2 == 0 && indexCol %2 !== 0) sumEvenRowOddColOddRowEvenCol += exampleArr[indexRow][indexCol]  
+            if(indexRow %2 !== 0 && indexCol %2 == 0) sumEvenRowOddColOddRowEvenCol += exampleArr[indexRow][indexCol]
+        }
+    }
+    document.write(`sum of even rows = ${sumEvenRowOddColOddRowEvenCol}<br><br>`)
+</script>
+<br><br>
+<a href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_11/index.html"><button>Назад</button></a>
+</body>
+</html>
