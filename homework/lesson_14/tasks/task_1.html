@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task_1</title>
+    <style>
+      body {
+        font-family: "Roboto";
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Задача 1</h2>
+    <div style="font-weight: 600">
+      Описати масив об’єктів – сайтів розроблених компанією з такими
+      властивостями
+      <br />
+      назва компанії на час розробки (назву періодично змінюють)
+      <br />власник компанії <br />споснсори (масив спонсорів) * прізвище
+      спонсора * ім’я спонсора * сума вкладень спонсора <br />рік випуску
+      <br />вартість сайту
+    </div>
+    <p>Рішення:</p>
+
+    <script>
+      let siteList = [
+        {
+          companyName: "Dunder mifflin",
+          ownerName: "Michael Scott",
+          sponcorList: [
+            {
+              sponcorName: "Alex",
+              sponcorlastName: "Zinchenko",
+              sponcorInvestition: 10000,
+            },
+            {
+              sponcorName: "David",
+              sponcorlastName: "Backham",
+              sponcorInvestition: 500500,
+            },
+            {
+              sponcorName: "Andriy",
+              sponcorlastName: "Shevchenko",
+              sponcorInvestition: 89900,
+            },
+          ],
+          sinceYear: 2020,
+          websiteCost: 7000,
+        },
+        {
+          companyName: "Apple",
+          ownerName: "Petro Poroshenko",
+          sponcorList: [
+            {
+              sponcorName: "Vasil",
+              sponcorlastName: "Baydak",
+              sponcorInvestition: 46456,
+            },
+            {
+              sponcorName: "Keanu",
+              sponcorlastName: "Rivs",
+              sponcorInvestition: 678679,
+            },
+            {
+              sponcorName: "Oleksandr",
+              sponcorlastName: "Usik",
+              sponcorInvestition: 234532,
+            },
+          ],
+          sinceYear: 2012,
+          websiteCost: 550000,
+        },
+        {
+          companyName: "Toyota",
+          ownerName: "Johny Knoxville",
+          sponcorList: [
+            {
+              sponcorName: "Boris",
+              sponcorlastName: "Johnson",
+              sponcorInvestition: 767688,
+            },
+            {
+              sponcorName: "Quentin",
+              sponcorlastName: "Lebiga",
+              sponcorInvestition: 5465,
+            },
+            {
+              sponcorName: "Nataly",
+              sponcorlastName: "Koval",
+              sponcorInvestition: 326500,
+            },
+          ],
+          sinceYear: 2008,
+          websiteCost: 452300,
+        },
+      ]
+      console.log("original array")
+      console.log(siteList)
+      document.write("To see the list of sites - check console<br><br>")
+
+      // point 1
+      document.write("Знайти:<br>")
+      document.write("1) загальну вартість усіх сайтів<br>")
+      let totalCost = siteList.reduce(
+        (prevValue, comp) => prevValue + comp.websiteCost,
+        0
+      )
+      document.write(`Total price for all websites = ${totalCost}<br><br>`)
+
+      // point 2
+      document.write(
+        "2) кількість сайтів, що було зроблено між 2000 та 2009 р<br>"
+      )
+      let devUntil2009 = siteList.reduce(
+        (prevCounter, comp) =>
+          comp.sinceYear > 2000 && comp.sinceYear < 2009
+            ? prevCounter + 1
+            : prevCounter,
+        0
+      )
+      document.write(
+        `quantity of companies developed after 2000 and until 2009 = ${devUntil2009}<br><br>`
+      )
+
+      // point 3
+      document.write(
+        "3) кількість сайтів, де сума спонсорських вкладень була більшою за 100000<br>"
+      )
+      let sponcorInvestitionOver100000 = 0
+      for (let i = 0; i < siteList.length; i++) {
+        let x = siteList[i].sponcorList.reduce(
+          (prevCounter, el) =>
+            el.sponcorInvestition > 100000 ? prevCounter + 1 : prevCounter,
+          0
+        )
+        sponcorInvestitionOver100000 += x
+      }
+      document.write(
+        `quantity of companies where sponcores money was over 100000 = ${sponcorInvestitionOver100000}<br><br>`
+      )
+
+      // point 4
+      document.write("4) створити загальний список усіх спонсорів<br>")
+      let allSponcores = []
+      for (let comp of siteList) {
+        for (let sponcor of comp.sponcorList) {
+          allSponcores.push(sponcor.sponcorName + " " + sponcor.sponcorlastName)
+        }
+      }
+      document.write(`all sponcores: ${allSponcores}<br><br>`)
+
+      // point 5
+      document.write("5) знайти рік, коли прибуток був найбільшим<br>")
+      function mostProfitYear(arr) {
+        let biggestCostYear
+        let biggestCost = 0
+        for (let comp of arr) {
+          if (comp.websiteCost > biggestCost) {
+            biggestCostYear = comp.sinceYear
+            biggestCost = comp.websiteCost
+          }
+        }
+        return biggestCostYear
+      }
+      document.write(
+        `the biggest profit was in: ${mostProfitYear(siteList)}<br><br>`
+      )
+
+      // point 6
+      document.write("6) упорядкувати список за спаданням прибутку<br>")
+      let copyOfsiteList = [...siteList]
+      let sortedByCost = copyOfsiteList.sort(function (a, b) {
+        if (a["websiteCost"] < b["websiteCost"]) return -1
+      })
+      console.log("sorted By Cost:")
+      console.log(sortedByCost)
+      document.write(`answer in console<br><br>`)
+
+      // point 7
+      document.write(
+        "7) Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000<br>"
+      )
+      let costUpTo10000 = []
+      let costOver10000 = []
+      for (const comp of siteList) {
+        if (comp.websiteCost <= 10000) costUpTo10000.push(comp)
+        else costOver10000.push(comp)
+      }
+      console.log("cost Up To 10000:")
+      console.log(costUpTo10000)
+      console.log("cost Over 10000:")
+      console.log(costOver10000)
+      document.write(`answer in console<br><br>`)
+    </script>
+    <br /><br />
+    <a
+      href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_14/index.html"
+      ><button>Назад</button></a
+    >
+  </body>
+</html>

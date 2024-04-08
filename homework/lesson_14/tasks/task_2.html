@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task_2</title>
+    <style>
+      body {
+        font-family: "Roboto";
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Задача 2</h2>
+    <div style="font-weight: 600">
+      Розробити функцію, у яку передають об’єкт (день, місяць, рік). Визначити,
+      який буде рік через N місяців.
+    </div>
+    <p>Рішення:</p>
+
+    <script>
+      document.write("original data = 26.01.1992<br><br>")
+      let monthQ = parseInt(prompt("enter month quantity"))
+      let userDate = {
+        day: 26,
+        month: 1,
+        year: 1992,
+      }
+      function countYear(obj, monthQuantity) {
+        let objYear = obj.year
+        if (monthQuantity + obj.month <= 12) objYear
+        else objYear = Math.floor(monthQuantity / 12) + objYear
+        return objYear
+      }
+      document.write(`after ${monthQ} monthes will be ${countYear(userDate, monthQ)} year`)
+    </script>
+    <br /><br />
+    <a
+      href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_14/index.html"
+      ><button>Назад</button></a
+    >
+  </body>
+</html>
