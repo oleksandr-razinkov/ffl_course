@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task_3</title>
+    <style>
+      body {
+        font-family: "Roboto";
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Задача 3</h2>
+    <div style="font-weight: 600">
+      Розробити клас MultChecker для перевірки таблиці множення
+    </div>
+    <p>Рішення:</p>
+
+    <script>
+      class MultChecker {
+        constructor(num, correctReply = 0, incorrectReply = 0) {
+          this.num = num
+          this.correctReply = correctReply
+          this.incorrectReply = incorrectReply
+        }
+        getRandNum() {
+          return 1 + Math.floor(Math.random() * 10)
+        }
+        getTest() {
+          let randNum = this.getRandNum()
+          let userReply = parseInt(
+            prompt(`how much will be ${randNum} * ${this.num}?`)
+          )
+          userReply === randNum * this.num
+            ? this.correctReply++
+            : this.incorrectReply++
+        }
+        getRender() {
+          return document.write(
+            `correct replies = ${this.correctReply} <br> incorrect replies = ${this.incorrectReply}`
+          )
+        }
+      }
+      let checkSeven = new MultChecker(7)
+      for (let i = 0; i < 5; i++) {
+        checkSeven.getTest()
+      }
+      checkSeven.getRender()
+    </script>
+    <br /><br />
+    <a
+      href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_15/index.html"
+      ><button>Назад</button></a
+    >
+  </body>
+</html>
