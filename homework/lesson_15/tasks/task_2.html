@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task_2</title>
+    <style>
+      body {
+        font-family: "Roboto";
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Задача 2</h2>
+    <div style="font-weight: 600">Створити об’єкт «Авто».</div>
+    <p>Рішення:</p>
+
+    <script>
+      let objCar = {
+        title: "Toyota",
+        gasTank: 80,
+        currentLitrs: 25,
+        seatsNum: 5,
+        passangers: 2,
+        gasAdd: function (lits) {
+          let res
+          lits + this.currentLitrs > this.gasTank
+            ? (res = "impossible to fit")
+            : (res = this.currentLitrs + lits)
+          return res
+        },
+        getPassangers: function () {
+          return this.passangers
+        },
+        addPassangers: function (newPassangersQ) {
+          let res
+          newPassangersQ + this.passangers > this.seatsNum
+            ? (res = "not enough place")
+            : res = this.passangers += newPassangersQ
+          return res
+        },
+        reducePassangers: function (reducePassangersQ) {
+          this.passangers < reducePassangersQ
+            ? (this.passangers = 0)
+            : (this.passangers -= reducePassangersQ)
+          return this.passangers
+        }
+      }
+      document.write(`after refuiling tank = ${objCar.gasAdd(20)}<br>`)
+      document.write(`passangers = ${objCar.getPassangers()}<br>`)
+      document.write(`add new passangers = ${objCar.addPassangers(22)}<br>`)
+      document.write(`reduce passangers = ${objCar.reducePassangers(1)}<br>`)
+    </script>
+    <br /><br />
+    <a
+      href="https://github.com/oleksandr-razinkov/ffl_course/tree/main/homework/lesson_15/index.html"
+      ><button>Назад</button></a
+    >
+  </body>
+</html>
